@@ -1,0 +1,375 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: 'DM Sans', sans-serif;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items:center;
+	min-height: 100vh;
+	background: url('../19.jpg') no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: 15px 30px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	z-index: 99;
+}
+.logo {
+	font-size: 32px;
+	color: #fff;
+	text-decoration: none;
+	font-weight: 600;
+	pointer-events: none;
+
+}
+.navbar a {
+	position: relative;
+	font-size: 20px;
+	color: #fff;
+	text-decoration: none;
+	font-weight: 500;
+	margin-right: 40px;
+	
+}
+.navbar a::after{
+	content: '';
+	position: absolute;
+	left: 0;
+	bottom: -6px;
+	width: 100%;
+	height: 3px;
+	background: #fff;
+	border-radius: 5px;
+	transform: scaleX(0);
+	transform-origin: center;
+	transition: transform 0.5s;
+}
+.navbar a:hover::after{
+	transform: scaleX(1);
+	transform-origin: right;
+}
+.navbar .btnLogin-popup {
+	width: 130px;
+	height: 50px;
+	position: relative;
+	background: transparent;
+	border: 2px solid #fff;
+	border-radius: 8px;
+	outline: none;
+	font-size: 20px;
+	cursor: pointer;
+	color: #fff;
+	font-weight: 500;
+	margin-left: 40px;
+	margin-right: 40px;
+
+}
+.navbar .btnLogin-popup::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	bottom: -4px;
+	width: 100%;
+	height: 2px;
+	color: #fff;
+	opacity: 0.75;
+	transition: 0.5s;
+
+}
+.navbar .btnLogin-popup:hover {
+	background: #fff;
+	color: #000000;
+}
+.wrapper{
+	position: relative;
+	width: 400px;
+	height: 500px;
+	background: transparent;
+	border: 2px solid rgba(255, 255, 255, 0.5);
+	border-radius: 20px;
+	backdrop-filter: blur(30px);
+	box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: transform 0.4s ease, height 0.2s ease;
+	transform: scale(0);
+
+}
+.wrapper .form-box.login{
+	transition: transform 0.2s ease;
+}
+.wrapper .active{
+	height: 520px;
+	
+}
+.wrapper.active .form-box.login{
+	transition: none;
+	transform: translateX(-400px);
+}
+.wrapper .form-box {
+	width: 100%;
+	padding: 40px;
+}
+.wrapper.active-popup{
+	transform: scale(1);
+}
+
+.form-box h2{
+	font-size: 2em;
+	color: #fff;
+	text-align: center;
+	margin-bottom: 20px;
+	
+}
+.details{
+	position: relative;
+	border-bottom: 2px solid #fff;
+	width: 100%;
+	height: 50px;
+	margin: 50px 0;
+
+}
+.details label{
+	position: absolute;
+	top: 50%;
+	left: 5px;
+	transform: translateY(-50%);
+	font-size: 1em;
+	color: #fff;
+	font-weight: 500;
+	pointer-events: none;
+	transition: 0.5s;
+	padding: 0 35px 0 5px;
+
+
+}
+.details input{
+	width: 100%;
+	height: 100%;
+	background: transparent;
+	border: none;
+	outline: none;
+	font-size: 1em;
+	color: #fff;
+}
+.details .icon{
+	position: absolute;
+	right: 8px;
+	font-size: 1.2em;
+	color: #fff;
+	line-height: 57px;
+}
+
+.details input:focus~label, .details input:valid~label{
+	top: -5px;
+
+}
+.button {
+	width: 100%;
+	height: 45px;
+	border: 2px solid #fff;
+	background: transparent;
+	border-radius: 8px;	
+	cursor: pointer;
+	font-size: 1em;
+	color:#fff;
+	font-weight: 600;
+
+}
+.wrapper .icon-close{
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 45px;
+	height: 45px;
+	font-size: 2.5em;
+	color: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	z-index: 1;
+	
+}
+.navigation-body{
+	display: flex;
+	background: url('../19.jpg');
+}
+
+.u-name {
+	font-size: 32px;
+	color: #fff;
+	text-decoration: none;
+	font-weight: 600;
+}
+.u-name b {
+	color: #fff;
+}
+.header i {
+	font-size: 30px;
+	cursor: pointer;
+	color: #fff;
+}
+.header i:hover {
+	color: #000303;
+}
+.user-p {
+	text-align: center;
+	padding-left: 10px;
+	padding-top: 25px;
+}
+.user-p img {
+	width: 100px;
+	border-radius: 50%;
+}
+.user-p h4 {
+	color: #ccc;
+	padding: 5px 0;
+
+}
+
+
+.section-1 {
+	width: 100%;
+	background: url("/19.jpg");
+	background-size: cover;
+	background-position: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+.section-1 h1 {
+	color: #fff;
+	font-size: 60px;
+}
+.section-1 p {
+	color: #127b8e;
+	font-size: 20px;
+	background: #fff;
+	padding: 7px;
+	border-radius: 5px;
+}
+.side-bar {
+	width: 435px;
+	height: 435px;
+	transition: 500ms width;
+	background: transparent;
+	border: 2px solid rgba(255, 255, 255, 0.5);
+	border-radius: 20px;
+	backdrop-filter: blur(30px);
+	box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	margin-left: 25px;
+	margin-top: 60px;
+	align-items: center;
+
+}
+.side-bar ul {
+	list-style: none;
+	padding: 6px 14px;
+	margin-top: 20px;
+
+}
+.side-bar ul li {
+	font-size: 16px;
+	padding: 15px 0;
+	padding-left: 18px;
+	transition: 500ms background;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	margin: 10px 0;
+	border-radius: 6px;
+	
+}
+.side-bar ul li:hover {
+	background: rgba(255,255,255,0.2);
+	border-radius: 6px;
+}
+.side-bar ul li a {
+	text-decoration: none;
+	color: #eee;
+	cursor: pointer;
+	letter-spacing: 1px;
+	display: flex;
+	align-items: center;
+	font-size: 18px;
+
+}
+.side-bar ul li a i {
+	display: inline;
+	padding-right: 10px;
+	font-size: 23px;
+	text-align: center;
+
+}
+#navbtn {
+	display: inline-block;
+	padding-left: 0px;
+	margin-left: none;
+	font-size: 20px;
+	transition: 500ms color;
+}
+#checkbox {
+	display: none;
+}
+#checkbox:checked ~ .body .side-bar {
+	width: 95px;
+}
+#checkbox:checked ~ .body .side-bar .user-p{
+	visibility: hidden;
+}
+#checkbox:checked ~ .body .side-bar a span{
+	display: none;
+}
+.alert{
+   
+	font-size: 16px;
+	color: #fff;
+
+}
+
+.contact-box{
+	position: relative;
+	width: 600px;
+	height: 400px;
+	background: transparent;
+	border: 2px solid rgba(255, 255, 255, 0.5);
+	border-radius: 20px;
+	backdrop-filter: blur(30px);
+	box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	text-align: center;
+	padding: 14px 14px;
+
+
+}
+.contact-box h3{
+
+	font-size: 30px;
+	color: #fff;
+	text-align:left;
+	margin-bottom: 20px;
+
+
+}
+
