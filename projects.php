@@ -3,7 +3,9 @@ session_start();
 if (isset ($_SESSION['position']) &&  isset($_SESSION['employee_id'])) {
 	include "database-link.php";
 	include "app/model/project.php";
+	include "app/model/employee.php";
 	$projects = get_all_projects($conn);
+	$employees = get_all_employees($conn);
 ?>
 
 <!DOCTYPE html>
@@ -56,7 +58,13 @@ if (isset ($_SESSION['position']) &&  isset($_SESSION['employee_id'])) {
 					<td><?=++$i?></td>
 					<td><?=$project['task_name']?></td>
 					<td><?=$project['description']?></td>
-					<td><?=$project['assigned_to']?></td>
+					<td>
+						<?php
+						foreach ($employees as $employee){
+						if ($employee['employee_id'] == $project['assigned_to']){
+							echo $employee['name'];
+
+						}}?>
                     <td><?=$project['deadline']?></td>
 
 				<td>				
