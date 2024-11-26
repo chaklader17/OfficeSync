@@ -8,27 +8,27 @@
 
 			?>
 
-			<ul>
+			<ul id = "navigation-list">
 				<li>
-					<a href="#">
-					<i class='bx bx-calendar-check'></i>
-						<span>Schedules</span>
+					<a href="profile.php">
+					<i class='bx bx-face'></i>
+						<span>Profile</span>
 					</a>
 				</li>
 				<li>
-					<a href="#">
+					<a href="my-projects.php">
 					<i class='bx bx-layer'></i>
 						<span>Projects</span>
 					</a>
 				</li>
 				<li>
-					<a href="#">
+					<a href="documents.php">
 					<i class='bx bx-file'></i>
 						<span>Documents</span>
 					</a>
 				</li>
 				<li>
-					<a href="#">
+					<a href="messages.php">
 					<i class='bx bx-message'></i>
 						<span>Messages</span>
 					</a>
@@ -42,27 +42,28 @@
 			</ul>
 			<?php }
 			else{ ?>
-			<ul>
-				<li>
-					<a href="#">
+			<ul id = "navigation-list">
+				<li class = "active">
+					<a href="employees.php">
+					
 					<i class='bx bx-user-check'></i>
 						<span>Manage Employees</span>
 					</a>
 				</li>
 				<li>
-					<a href="#">
+					<a href="assign-project.php">
 					    <i class='bx bx-edit'></i>
 						<span>Assign Projects</span>
 					</a>
 				</li>
 				<li>
-					<a href="#">
+					<a href="projects.php">
 					<i class='bx bx-list-check'></i>
 						<span>Project List</span>
 					</a>
 				</li>
 				<li>
-					<a href="#">
+					<a href="messages.php">
 					<i class='bx bx-message'></i>
 						<span>Messages</span>
 					</a>
