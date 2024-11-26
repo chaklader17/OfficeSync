@@ -12,3 +12,4 @@ try {
 	echo "Connection failed: ". $e->getMessage();
 	exit;
 }
+
