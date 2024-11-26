@@ -76,7 +76,7 @@ if (isset ($_SESSION['position']) &&  isset($_SESSION['employee_id'])) {
     </div>
 
 	<script type = "text/javascript">
-		var active = document.querySelector("#navigation-list li:nth-child(0)");
+		var active = document.querySelector("#navigation-list li:nth-child(1)");
 		active.classList.add("active");
 		</script>       
 
