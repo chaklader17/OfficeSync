@@ -1,0 +1,45 @@
+<?php 
+session_start();
+if (isset($_SESSION['role']) && isset($_SESSION['employee-id'])) {
+
+if (isset($_POST['employee-id']) && isset($_POST['status']) && $_SESSION['role'] == 'employee') {
+	include "../database-link.php";
+
+    function validate_input($data) {
+	  $data = trim($data);
+	  $data = stripslashes($data);
+	  $data = htmlspecialchars($data);
+	  return $data;
+	}
+
+	$status = validate_input($_POST['status']);
+	$employee_id = validate_input($_POST['employee_id']);
+
+	if (empty($status)) {
+		$em = "status is required";
+	    header("Location: ../edit-project-employee.php?error=$em&id=$employee_id");
+	    exit();
+	}else {
+    
+       include "Model/projects.php";
+
+       $data = array($status, $id);
+       update_project_status($conn, $data);
+
+       $em = "Task updated successfully";
+	    header("Location: ../edit-project-employee.php?success=$em&id=$employee_id");
+	    exit();
+
+    
+	}
+}else {
+   $em = "Unknown error occurred";
+   header("Location: ../edit-project-employee.php?error=$em");
+   exit();
+}
+
+}else{ 
+   $em = "First login";
+   header("Location: ../login.php?error=$em");
+   exit();
+}
