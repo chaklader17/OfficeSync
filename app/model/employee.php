@@ -14,12 +14,12 @@ function get_all_employees($conn){
     return $employees;
 }
 function insert_employee ($conn, $data){
-    $sql = "INSERT into employees('name', email, 'password', position) VALUES (?,?,?,?)";
+    $sql = "INSERT into employees(`name`,`email`, `password`,`position`) VALUES (?,?,?,?)";
     $stmt = $conn->prepare($sql);
     $stmt-> execute($data);
 }
 function get_employee_by_id($conn, $id){
-	$sql = "SELECT * FROM employees WHERE employee_id = ? ";
+	$sql = "SELECT * FROM employees WHERE `employee_id` = ? ";
 	$stmt = $conn->prepare($sql);
 	$stmt->execute([$id]);
 
@@ -39,3 +39,4 @@ function delete_employee($conn, $data){
 	$stmt = $conn->prepare($sql);
 	$stmt->execute($data);
 }
+
