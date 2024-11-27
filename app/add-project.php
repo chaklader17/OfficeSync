@@ -14,6 +14,7 @@ if(isset($_POST['title']) && $_POST['description'] && isset($_POST['assigned_to'
       $title = validate_input($_POST['title']);
       $description = validate_input($_POST['description']);
       $assigned_to = validate_input($_POST['assigned_to']);
+      $deadline = validate_input($_POST['deadline']);
       
       if(empty($title)){
         $em = "Project Title is required.";
@@ -28,12 +29,19 @@ if(isset($_POST['title']) && $_POST['description'] && isset($_POST['assigned_to'
         exit();
 
 
+      } else  if(empty($assigned_to)){
+        $em = "Specify the employee you want to assign the project to.";
+        header("Location: ../assign-project.php?error=$em");
+        exit();
+
+
       } 
+
       else{
 
        include "model/project.php";
 
-        $data = array($title , $description, $assigned_to);
+        $data = array($title , $description, $assigned_to, $deadline);
         insert_project($conn, $data);
 
         $em = "Project has been assigned.";
@@ -58,3 +66,4 @@ else {
     exit();
 
 }
+
