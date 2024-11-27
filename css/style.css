@@ -267,8 +267,8 @@ header {
 	border-radius: 5px;
 }
 .side-bar {
-	width: 435px;
-	height: 435px;
+	width: 47.33405875952122vh;
+	height: 47.33405875952122vh;
 	transition: 500ms width;
 	background: transparent;
 	border: 2px solid rgba(255, 255, 255, 0.5);
@@ -279,14 +279,14 @@ header {
 	left: 0px;
 	top: 0px;
 	margin-left: 25px;
-	margin-top: 60px;
+	margin-top:  6.528835690968444vh;
 	align-items: center;
 
 }
 .side-bar ul {
 	list-style: none;
 	padding: 6px 14px;
-	margin-top: 20px;
+	margin-top: 2.176278563656148vh;
 
 }
 .side-bar ul li {
@@ -395,7 +395,7 @@ header {
 
 	position: relative;
 	width: 110vh;
-	height: 87vh;
+	height: 87vh flex;
 	background: transparent;
 	border: 2px solid rgba(255, 255, 255, 0.5);
 	border-radius: 20px;
@@ -403,6 +403,7 @@ header {
 	box-shadow: 0 25px 50px rgba(0,0,0,0.2);
 	padding: 40px 40px;
 	margin-left: 250px;
+	
 
 }
 
