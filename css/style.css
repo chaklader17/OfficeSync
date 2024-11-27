@@ -42,7 +42,18 @@ header {
 	color: #fff;
 	text-decoration: none;
 	font-weight: 500;
-	margin-right: 40px;
+	margin-right: 40px;.option-box {
+    position: relative;
+    width: 1000px;
+    height: 800px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(30px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+    padding: 40px 40px;
+    margin-left: 250px;
+}
 	
 }
 .navbar a::after{
@@ -323,3 +334,16 @@ header {
 #checkbox:checked ~ .body .side-bar a span{
 	display: none;
 }
+.option-box {
+    position: relative;
+    width: 1000vh;
+    height: 800vh;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(30px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+    padding: 40px 40px;
+    margin-left: 250px;
+}
+
