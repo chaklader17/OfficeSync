@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 26, 2024 at 08:29 PM
+-- Generation Time: Nov 27, 2024 at 09:04 PM
 -- Server version: 10.4.32-MariaDB
--- PHP Version: 8.0.30
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -30,10 +30,18 @@ SET time_zone = "+00:00";
 CREATE TABLE `documents` (
   `document_id` int(11) NOT NULL,
   `doc_name` varchar(100) NOT NULL,
-  `uploaded_by` int(11) DEFAULT NULL,
+  `uploaded_for` int(11) DEFAULT NULL,
   `upload_date` date DEFAULT curdate(),
-  `file_path` varchar(255) NOT NULL
+  `file_path` varchar(255) NOT NULL,
+  `uploaded_by` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `documents`
+--
+
+INSERT INTO `documents` (`document_id`, `doc_name`, `uploaded_for`, `upload_date`, `file_path`, `uploaded_by`) VALUES
+(13, 'Project 1 Test', 11, '2024-11-27', 'face3.jpg', 4);
 
 -- --------------------------------------------------------
 
@@ -46,8 +54,6 @@ CREATE TABLE `employees` (
   `name` varchar(50) DEFAULT NULL,
   `position` varchar(50) DEFAULT NULL,
   `email` varchar(50) DEFAULT NULL,
-  `attendance` varchar(50) DEFAULT NULL,
-  `performance` text DEFAULT NULL,
   `password` varchar(270) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -55,9 +61,11 @@ CREATE TABLE `employees` (
 -- Dumping data for table `employees`
 --
 
-INSERT INTO `employees` (`employee_id`, `name`, `position`, `email`, `attendance`, `performance`, `password`) VALUES
-(1, NULL, 'admin', 'admin@oms.com', NULL, NULL, '$2y$10$zz8M5LsXF8Kskv2v8PloQusFdEFmWmaHEQkEnMa.RShZiI.kI24u2'),
-(2, 'Nafim', 'employee', 'ahnaf@oms.com', NULL, NULL, '$2y$10$jwIdZR/jJU5s5KvA87iXCue5utczLYi4AHP9WvtMN7eDrdtKLYEHO');
+INSERT INTO `employees` (`employee_id`, `name`, `position`, `email`, `password`) VALUES
+(1, 'Admin', 'admin', 'admin@oms.com', '$2y$10$wl95A2C8W/2LrFq2QKy7xOsvy3G40KyJJmrmoJZP.ARD71/luojcO'),
+(4, 'Sana', 'employee', 'sana@oms.com', '$2y$10$StSSRKiy0OQqa6/qsQwbhOu5W07fRHQsiHSOtwtgy9IM2EsiZO2l2'),
+(5, 'Alexa', 'employee', 'alexa@oms.com', '$2y$10$sn5aqRRXxaojA1sAseHm/OlsaB3D7jGohXieTKhxpjoxvytZC0Tka'),
+(6, 'Mina', 'Employee', 'mina@oms.com', '$2y$10$Tsx8nentghWEqgWM4SH1TO8pjkCMLAfL0Yu1tSqR2YLGaiE4.mAnS');
 
 -- --------------------------------------------------------
 
@@ -98,8 +106,16 @@ CREATE TABLE `tasks` (
   `task_name` varchar(100) NOT NULL,
   `assigned_to` int(11) DEFAULT NULL,
   `deadline` date DEFAULT NULL,
-  `status` varchar(20) DEFAULT NULL
+  `progress` enum('Pending','In-progress','Completed') DEFAULT 'Pending',
+  `description` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tasks`
+--
+
+INSERT INTO `tasks` (`task_id`, `task_name`, `assigned_to`, `deadline`, `progress`, `description`) VALUES
+(11, 'Project Test', 4, '2024-11-24', 'In-progress', 'Test desc');
 
 --
 -- Indexes for dumped tables
@@ -110,7 +126,8 @@ CREATE TABLE `tasks` (
 --
 ALTER TABLE `documents`
   ADD PRIMARY KEY (`document_id`),
-  ADD KEY `uploaded_by` (`uploaded_by`);
+  ADD KEY `uploaded_for` (`uploaded_for`) USING BTREE,
+  ADD KEY `uploaded_by` (`uploaded_by`) USING BTREE;
 
 --
 -- Indexes for table `employees`
@@ -147,13 +164,13 @@ ALTER TABLE `tasks`
 -- AUTO_INCREMENT for table `documents`
 --
 ALTER TABLE `documents`
-  MODIFY `document_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `document_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `employees`
 --
 ALTER TABLE `employees`
-  MODIFY `employee_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `employee_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `messages`
@@ -171,7 +188,7 @@ ALTER TABLE `schedules`
 -- AUTO_INCREMENT for table `tasks`
 --
 ALTER TABLE `tasks`
-  MODIFY `task_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `task_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Constraints for dumped tables
@@ -181,7 +198,8 @@ ALTER TABLE `tasks`
 -- Constraints for table `documents`
 --
 ALTER TABLE `documents`
-  ADD CONSTRAINT `documents_ibfk_1` FOREIGN KEY (`uploaded_by`) REFERENCES `employees` (`employee_id`);
+  ADD CONSTRAINT `documents_ibfk2` FOREIGN KEY (`uploaded_by`) REFERENCES `employees` (`employee_id`) ON DELETE SET NULL ON UPDATE SET NULL,
+  ADD CONSTRAINT `documents_ibfk_1` FOREIGN KEY (`uploaded_for`) REFERENCES `tasks` (`task_id`) ON DELETE SET NULL ON UPDATE SET NULL;
 
 --
 -- Constraints for table `messages`
@@ -194,7 +212,7 @@ ALTER TABLE `messages`
 -- Constraints for table `tasks`
 --
 ALTER TABLE `tasks`
-  ADD CONSTRAINT `tasks_ibfk_1` FOREIGN KEY (`assigned_to`) REFERENCES `employees` (`employee_id`);
+  ADD CONSTRAINT `tasks_ibfk_1` FOREIGN KEY (`assigned_to`) REFERENCES `employees` (`employee_id`) ON DELETE SET NULL ON UPDATE SET NULL;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
