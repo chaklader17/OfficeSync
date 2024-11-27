@@ -37,11 +37,11 @@ if (isset ($_SESSION['position']) &&  isset($_SESSION['employee_id']) && $_SESSI
 		<section class="section-1">
         <div class = "option-box">
 			<nav class = "navbar">
-		<h4 class="title">Edit Project<a href="projects.php">Projects</a></h4>
+		<h4 class="title">Project<a href="my-projects.php">Projects</a></h4>
 </nav>
         <form class ="form-1"
             method = "POST"
-            action = "app/update-project.php">
+            action = "app/update-project-employee.php">
             <?php if(isset($_GET['error'])){?>
 
         <div class="danger" role="alert">
@@ -60,35 +60,24 @@ if (isset ($_SESSION['position']) &&  isset($_SESSION['employee_id']) && $_SESSI
 //echo $pass;
 
 ?>
-                     
             <div class = "input-holder">
-                <label class = "info">Title</label>
-                <p><b>Title: </b><?=$project['description']?>"></p>
-            </div>
+                <label class = "info">Project Title<Title></Title></label>
+                <p><?=$project['task_name']?></p></br>        
             <div class = "input-holder">
                 <label class = "info">Project Description</label>
-                <p><b>Description: </b><?=$project['description']?>"></p>
-            </div><br>
-
+                <p><?=$project['description']?></p></br>
+            </div>
             <div class = "input-holder">
-                <label class = "info">Status</label>
-                <select name ="assigned_to" class = "input-1">
-                    <?php if ($employees !=0) { 
-							foreach ($employees as $employee) {
-                                if($project['assigned_to'] == $employee['employee_id']){?>
-                                <option selected value="<?=$employee['employee_id']?>"><?=$employee['name']?></option>
+                <label class = "info">Progress</label>
+                <select name="status" class="input-1">
+						<option 
+						      <?php if( $project['progress'] == "pending") echo"selected"; ?> >Pending</option>
+						<option <?php if( $project['progress'] == "in-progress") echo"selected"; ?>>In-progress</option>
+						<option <?php if( $project['progress'] == "completed") echo"selected"; ?>>Completed</option>
+					</select><br>
+				</div>
+				
 
-                        <?php } 
-                        else{?>                                               
-                        <option value="<?=$employee['employee_id']?>"><?=$employee['name']?></option>
-                        
-                        <?php }}} ?>
-
-					</select><br><br>
-            <div class = "input-holder">
-                <label class = "info">Deadline</label>
-                <input type = "text" name = "deadline" class = "input-1" placeholder = "Deadline" value = "<?=$project['deadline']?>"><br></br>
-            </div>      
             
             <input type="text" name="id" value="<?=$project['task_id']?>" hidden>
             <button class = "assign-btn">Update</button>
