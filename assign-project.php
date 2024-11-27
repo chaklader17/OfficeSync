@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (isset ($_SESSION['position']) &&  isset($_SESSION['employee_id'])) {
+if (isset ($_SESSION['position']) &&  isset($_SESSION['employee_id']) && $_SESSION['position'] == "admin") {
 	include "database-link.php";
 	include "app/model/employee.php";
 	$employees = get_all_employees($conn);
@@ -68,10 +68,10 @@ if (isset ($_SESSION['position']) &&  isset($_SESSION['employee_id'])) {
 					</select><br><br>
             <div class = "input-holder">
                 <label class = "info">Deadline</label>
-                <input type = "text" name = "title" class = "input-1" placeholder = "Deadline"><br></br>
+                <input type = "text" name = "deadline" class = "input-1" placeholder = "Deadline"><br></br>
             </div>      
 
-            <button class = "edit-btn">Assign</button>
+            <button class = "assign-btn">Assign</button>
 
 
         </div>    
@@ -102,3 +102,4 @@ else {
 
 }
 ?>
+
