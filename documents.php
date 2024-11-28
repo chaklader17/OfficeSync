@@ -62,10 +62,13 @@ if (isset ($_SESSION['position']) &&  isset($_SESSION['employee_id'])) {
 					<td><?=$document['doc_name']?></td>
 					<td>
 						<?php
+						if (is_array($projects) || is_object($projects)){
 						foreach ($projects as $project){
 						if ($project['task_id'] == $document['uploaded_for']){
 							echo $project['task_name'];
 
+						} 			
+						
 						}}?>
 
 
@@ -80,7 +83,7 @@ if (isset ($_SESSION['position']) &&  isset($_SESSION['employee_id'])) {
 <?php }
      
 	 else{?>
-	<h3> empty </h3>
+	<h3></h3>
 
 	<?php
 	 }?>
@@ -108,3 +111,4 @@ else {
 
 }
 ?>
+
