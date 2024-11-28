@@ -1,4 +1,4 @@
-<<?php
+<?php
 
 function insert_project($conn, $data){
     $sql = "INSERT into tasks(`task_name`, `description`, `assigned_to`, `deadline` ) VALUES (?,?,?,?)";
@@ -35,12 +35,12 @@ function delete_project($conn, $data){
 	$stmt->execute($data);
 }
 function update_project($conn, $data){
-	$sql = "UPDATE tasks SET task_name=?, description=?, assigned_to=?, deadline=? WHERE task_id=?";
+	$sql = "UPDATE tasks SET `task_name`=?, `description` =?, `assigned_to`=?,`deadline` =? WHERE `task_id` =?";
 	$stmt = $conn->prepare($sql);
 	$stmt->execute($data);
 }
 function get_all_projects_through_id($conn, $id){
-    $sql = "SELECT * FROM tasks WHERE assigned_to=?";
+    $sql = "SELECT * FROM tasks WHERE  `assigned_to`=?";
     $stmt = $conn->prepare($sql);
     $stmt-> execute([$id]);
     
@@ -53,7 +53,7 @@ function get_all_projects_through_id($conn, $id){
     return $tasks;
 }
 function update_project_progress($conn, $data){
-	$sql = "UPDATE tasks SET progress=? WHERE task_id=?";
+	$sql = "UPDATE tasks SET `progress`=? WHERE `task_id`=?";
 	$stmt = $conn->prepare($sql);
 	$stmt->execute($data);
 }
