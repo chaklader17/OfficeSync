@@ -37,11 +37,11 @@ if (isset ($_SESSION['position']) &&  isset($_SESSION['employee_id']) && $_SESSI
 		<section class="section-1">
         <div class = "option-box">
 			<nav class = "navbar">
-		<h4 class="title">Edit Project<a href="projects.php">Projects</a></h4>
+		<h4 class="title">Edit Project<a href="my_projects.php">Projects</a></h4>
 </nav>
         <form class ="form-1"
             method = "POST"
-            action = "app/update-project.php">
+            action = "app/update-project-employee.php">
             <?php if(isset($_GET['error'])){?>
 
         <div class="danger" role="alert">
@@ -69,22 +69,14 @@ if (isset ($_SESSION['position']) &&  isset($_SESSION['employee_id']) && $_SESSI
                 <label class = "info">Project Description</label>
                 <p><b>Description: </b><?=$project['description']?>"></p>
             </div><br>
-
-            <div class = "input-holder">
+=            <div class = "input-holder">
                 <label class = "info">Status</label>
                 <select name ="assigned_to" class = "input-1">
-                    <?php if ($employees !=0) { 
-							foreach ($employees as $employee) {
-                                if($project['assigned_to'] == $employee['employee_id']){?>
-                                <option selected value="<?=$employee['employee_id']?>"><?=$employee['name']?></option>
-
-                        <?php } 
-                        else{?>                                               
-                        <option value="<?=$employee['employee_id']?>"><?=$employee['name']?></option>
-                        
-                        <?php }}} ?>
-
-					</select><br><br>
+                <option 
+						      <?php if( $project['status'] == "pending") echo"selected"; ?> >pending</option>
+						<option <?php if( $project['status'] == "in_progress") echo"selected"; ?>>in_progress</option>
+						<option <?php if( $project['status'] == "completed") echo"selected"; ?>>completed</option>
+					</select><br>
             <div class = "input-holder">
                 <label class = "info">Deadline</label>
                 <input type = "text" name = "deadline" class = "input-1" placeholder = "Deadline" value = "<?=$project['deadline']?>"><br></br>

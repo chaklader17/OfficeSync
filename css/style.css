@@ -12,7 +12,7 @@
 	justify-content: center;
 	align-items:center;
 	min-height: 100vh;
-	background: url('/19.jpg') no-repeat;
+	background: url('/21.jpg') no-repeat;
 	background-size: cover;
 	background-position: center;
 }
@@ -65,8 +65,8 @@ header {
 .navbar .btnLogin-popup {
 	width: 130px;
 	height: 50px;
-	position: relative;
-	background: transparent;
+	position: center ;
+	background: black ;
 	border: 2px solid #fff;
 	border-radius: 8px;
 	outline: none;
@@ -102,7 +102,7 @@ header {
 	border: 2px solid rgba(255, 255, 255, 0.5);
 	border-radius: 20px;
 	backdrop-filter: blur(30px);
-	box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+	box-shadow: 0 25px 50px rgba(14, 13, 13, 0.2);
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -207,7 +207,7 @@ header {
 }
 .navigation-body{
 	display:flex;
-	background: url('/19.jpg');
+	background: url('css/21.png');
 }
 .u-name {
 	font-size: 32px;
@@ -257,7 +257,7 @@ header {
 
 .section-1 {
 	width: 100%;
-	background: url("/19.jpg");
+	background: url("/image.png");
 	background-size: cover;
 	background-position: center;
 	display: flex;
