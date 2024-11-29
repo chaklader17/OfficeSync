@@ -27,11 +27,11 @@ if (isset ($_SESSION['position']) &&  isset($_SESSION['employee_id']) && $_SESSI
         <table class="main-table" style="max-width: 300px;">
 			<tr>
 		        <td>Full name</td>
-                <td><?=$employee['full_name']?></td>
+                <td><?=$employee['name']?></td>
             </tr>
             <tr>
 		        <td>Designation</td>
-                <td><?=$employee['role']?></td>
+                <td><?=$employee['position']?></td>
             </tr>
         </table>
     </nav>
