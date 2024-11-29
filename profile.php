@@ -29,11 +29,11 @@ if (isset ($_SESSION['position']) &&  isset($_SESSION['employee_id']) && $_SESSI
 		<h4 class="title">Profile<a href="edit_profile.php">Edit Profile</a></h4>
         <table class="main-table" style="max-width: 100vh;">
 		<tr>
-		        <td>OMS ID</td>
+		        <td>Employee ID</td>
                 <td><?=$employee['employee_id']?></td>
             </tr>
 			<tr>
-		        <td>Full name</td>
+		        <td>Name</td>
                 <td><?=$employee['name']?></td>
             </tr>
             <tr>
