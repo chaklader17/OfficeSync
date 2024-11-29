@@ -3,6 +3,7 @@ session_start();
 if (isset($_SESSION['position']) && isset($_SESSION['employee_id'])) {
 if(isset($_POST['email']) && $_POST['password'] && isset($_POST['name']) && $_SESSION['position'] == 'admin') {
     include "../database-link.php";
+    include "../edit_profile.php";
 
     function validate_input($data) {
         $data = trim($data);
