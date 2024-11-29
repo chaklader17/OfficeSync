@@ -5,11 +5,11 @@ if (isset ($_SESSION['position']) &&  isset($_SESSION['employee_id']) && $_SESSI
     include "database-link.php";
     include "app/model/employee.php";
     
-    if (!isset($_GET['id'])) {
+    if (!isset($_GET['employee_id'])) {
     	 header("Location: employees.php");
     	 exit();
     }
-    $id = $_GET['id'];
+    $id = $_GET['employee_id'];
     $employee = get_employee_by_id($conn, $id);
 
     if ($employee == 0) {

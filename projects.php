@@ -40,8 +40,8 @@ if (isset ($_SESSION['position']) &&  isset($_SESSION['employee_id'])) {
 
         <?php if ($projects != 0){?>	
 		<table class="main-table">
-			<thead>
-		        <tr>
+			<tr>
+		        <th>#</th>
 					<th>Project ID</th>
 					<th>Project Title</th>
 					<th>Description</th>
