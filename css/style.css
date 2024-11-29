@@ -1,5 +1,4 @@
 
-
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 * {
 	padding: 0;
@@ -9,12 +8,11 @@
 }
 
 body {
-body {
 	display: flex;
 	justify-content: center;
 	align-items:center;
 	min-height: 100vh;
-	background: url('../1234.png') no-repeat;
+	background: url('../18.jpg') no-repeat;
 	background-size: cover;
 	background-position: center;
 }
@@ -89,13 +87,11 @@ header {
 	color: #fff;
 	opacity: 0.75;
 	transition: 0.6s;
-	transition: 0.6s;
 
 }
 .navbar .btnLogin-popup:hover {
 	background: #fff;
 	color: #000000;
-
 
 }
 .wrapper{
@@ -106,7 +102,6 @@ header {
 	border: 2px solid rgba(255, 255, 255, 0.5);
 	border-radius: 20px;
 	backdrop-filter: blur(30px);
-	box-shadow: 0 25px 50px rgba(0,0,0,0.2);
 	box-shadow: 0 25px 50px rgba(0,0,0,0.2);
 	display: flex;
 	justify-content: center;
@@ -138,7 +133,6 @@ header {
 	font-size: 2em;
 	color: #fff;
 	text-align: center;
-	margin-bottom: 20px;
 	margin-bottom: 20px;
 	
 }
@@ -217,11 +211,6 @@ header {
 	background: url('../19.jpg');
 }*/
 
-/*.navigation-body{
-	display: flex;
-	background: url('../19.jpg');
-}*/
-
 .u-name {
 	font-size: 32px;
 	color: #fff;
@@ -255,10 +244,8 @@ header {
 }
 
 
-
 .section-1 {
 	width: 100%;
-	background: url("/19.jpg");
 	background: url("/19.jpg");
 	background-size: cover;
 	background-position: center;
@@ -267,7 +254,6 @@ header {
 	align-items: center;
 	flex-direction: column;
 	transition: 500ms background;
-	transition: 500ms background;
 }
 .section-1 h1 {
 	color: #fff;
@@ -275,30 +261,10 @@ header {
 }
 .section-1 p {
 	color: #ffffff;
-	color: #ffffff;
 	font-size: 20px;
 	background: rgba(255,255,255,0.3);
 	padding: 15px;
-	background: rgba(255,255,255,0.3);
-	padding: 15px;
 	border-radius: 5px;
-}
-.side-bar {
-	width: 47.33405875952122vh;
-	height: 47.33405875952122vh;
-	transition: 500ms width;
-	background: transparent;
-	border: 2px solid rgba(255, 255, 255, 0.5);
-	border-radius: 20px;
-	backdrop-filter: blur(30px);
-	box-shadow: 0 25px 50px rgba(0,0,0,0.2);
-	position: absolute;
-	left: 0px;
-	top: 0px;
-	margin-left: 25px;
-	margin-top:  6.528835690968444vh;
-	align-items: center;
-
 }
 .side-bar {
 	width: 47.33405875952122vh;
@@ -321,22 +287,16 @@ header {
 	list-style: none;
 	padding: 6px 14px;
 	margin-top: 2.176278563656148vh;
-	padding: 6px 14px;
-	margin-top: 2.176278563656148vh;
 
 }
 .side-bar ul li {
 	font-size: 16px;
-	padding: 15px 0;
 	padding: 15px 0;
 	padding-left: 18px;
 	transition: 500ms background;
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
-	margin: 10px 0;
-	border-radius: 6px;
-	
 	margin: 10px 0;
 	border-radius: 6px;
 	
@@ -350,20 +310,7 @@ header {
 }
 .side-bar .active a i {
 	background : transparent;
-	background: rgba(255, 255, 255, 0.5);
-	border-radius: 6px;
 }
-.side-bar .active a {
-   background: transparent;
-}
-.side-bar .active a i {
-	background : transparent;
-}
-/*.side-bar ul .active:hover {
-	background:  rgba(255, 255, 255, 0.5);	
-
-}*/
-
 /*.side-bar ul .active:hover {
 	background:  rgba(255, 255, 255, 0.5);	
 
@@ -378,17 +325,11 @@ header {
 	align-items: center;
 	font-size: 18px;
 	
-	display: flex;
-	align-items: center;
-	font-size: 18px;
-	
 }
 .side-bar ul li a i {
 	display: inline;
 	padding-right: 10px;
 	font-size: 23px;
-	text-align: center;
-
 	text-align: center;
 
 }
@@ -405,15 +346,7 @@ header {
 #checkbox:checked ~ .body .side-bar {
 	width: 95px;
 	
-	width: 95px;
-	
 }
-#checkbox:checked ~ .body .option-box{
-	transition: transform 0.5s ease;
-	transform: translateX(-25%);
-
-}
-
 #checkbox:checked ~ .body .option-box{
 	transition: transform 0.5s ease;
 	transform: translateX(-25%);
