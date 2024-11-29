@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (isset($_SESSION['position']) && isset($_SESSION['employee_id'])) {
-if(isset($_POST['id']) && isset($_POST['title']) && $_POST['description'] && isset($_POST['assigned_to']) && isset($_POST['deadline']) && $_SESSION['position'] == 'admin') {
+if(isset($_POST['id']) && isset($_POST['title']) && isset($_POST['description']) && isset($_POST['assigned_to']) && isset($_POST['deadline']) && $_SESSION['position'] == 'admin') {
     include "../database-link.php";
 
     function validate_input($data) {
@@ -25,6 +25,7 @@ if(isset($_POST['id']) && isset($_POST['title']) && $_POST['description'] && iss
 		$em = "Project description is required";
 	    header("Location: ../edit-project.php?error=$em&id=$id");
 	    exit();
+    
 	}else if ($assigned_to == 0) {
 		$em = "Specify the employee you want to assign the project to.";
 	    header("Location: ../edit-project.php?error=$em&id=$id");

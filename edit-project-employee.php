@@ -37,7 +37,7 @@ if (isset ($_SESSION['position']) &&  isset($_SESSION['employee_id']) && $_SESSI
 		<section class="section-1">
         <div class = "option-box">
 			<nav class = "navbar">
-		<h4 class="title">Project<a href="my-projects.php">Projects</a></h4>
+		<h4 class="title">Project<a href="my-projects.php">My Projects</a></h4>
 </nav>
         <form class ="form-1"
             method = "POST"
