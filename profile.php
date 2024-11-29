@@ -4,7 +4,10 @@ if (isset ($_SESSION['position']) &&  isset($_SESSION['employee_id']) && $_SESSI
 
     include "database-link.php";
     include "app/model/employee.php";
+	include "app/model/project.php";
+
     $employee = get_employee_by_id($conn, $_SESSION['employee_id']);
+	$projects = get_all_projects_through_id($conn, $_SESSION['employee_id']);
  ?>
 <!DOCTYPE html>    
 <html>
@@ -24,7 +27,11 @@ if (isset ($_SESSION['position']) &&  isset($_SESSION['employee_id']) && $_SESSI
         <div class = "option-box">
 			<nav class = "navbar">
 		<h4 class="title">Profile<a href="edit_profile.php">Edit Profile</a></h4>
-        <table class="main-table" style="max-width: 300px;">
+        <table class="main-table" style="max-width: 100vh;">
+		<tr>
+		        <td>OMS ID</td>
+                <td><?=$employee['employee_id']?></td>
+            </tr>
 			<tr>
 		        <td>Full name</td>
                 <td><?=$employee['name']?></td>
@@ -33,6 +40,27 @@ if (isset ($_SESSION['position']) &&  isset($_SESSION['employee_id']) && $_SESSI
 		        <td>Designation</td>
                 <td><?=$employee['position']?></td>
             </tr>
+			<tr>
+		        <td>Email</td>
+                <td><?=$employee['email']?></td>
+            </tr>
+			<tr>
+		        <td>Password</td>
+                <td>**********</td>
+            </tr>
+			<tr>	
+		
+			<?php if(is_array($projects) || is_object($projects)){foreach($projects as $project){?>	
+				    <td>Project</td>
+					<td><?=$project['task_name']?></td>
+			</tr>
+
+			<?php
+			}
+		
+		}?>
+
+
         </table>
     </nav>
 </section>
