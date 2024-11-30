@@ -28,6 +28,12 @@
 					</a>
 				</li>
 				<li>
+					<a href="schedules.php">
+					<i class='bx bx-file-blank'></i>
+						<span>Schedules</span>
+					</a>
+				</li>
+				<li>
 					<a href="logout.php">
 					<i class='bx bx-log-out'></i>
 						<span>Logout</span>
@@ -54,6 +60,12 @@
 					<a href="projects.php">
 					<i class='bx bx-list-check'></i>
 						<span>Project List</span>
+					</a>
+				</li>
+				<li>
+					<a href="documents-admin.php">
+					<i class='bx bx-file-blank'></i>
+						<span>Documents</span>
 					</a>
 				</li>
 				<li>
