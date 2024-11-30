@@ -40,3 +40,8 @@ function delete_employee($conn, $data){
 	$stmt->execute($data);
 }
 
+function update_password($conn, $data){
+	$sql = "UPDATE employees SET `password`=? WHERE `employee_id`=?";
+	$stmt = $conn->prepare($sql);
+	$stmt->execute($data);
+}
