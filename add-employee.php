@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (isset ($_SESSION['position']) &&  isset($_SESSION['employee_id'])) {
+if (isset ($_SESSION['position']) &&  isset($_SESSION['employee_id']) && $_SESSION['position'] == "admin") {
 ?>
 
 <!DOCTYPE html>
@@ -53,14 +53,14 @@ if (isset ($_SESSION['position']) &&  isset($_SESSION['employee_id'])) {
             </div>           
             <div class = "input-holder">
                 <label class = "info">Email</label>
-                <input type = "text" name = "email"  class = "input-1" placeholder = "Full Name"><br></br>
+                <input type = "text" name = "email"  class = "input-1" placeholder = "Email"><br></br>
             </div>
             <div class = "input-holder">
                 <label class = "info">Password</label>
-                <input type = "text" name = "password" class = "input-1" placeholder = "Full Name"><br></br>
+                <input type = "text" name = "password" class = "input-1" placeholder = "Password"><br></br>
             </div>
 
-            <button class = "edit-btn">Add</button>
+            <button class = "assign-btn">Add</button>
 
 
         </div>    
