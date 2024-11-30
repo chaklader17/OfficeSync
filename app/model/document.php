@@ -1,7 +1,7 @@
 <?php
 
 function insert_document($conn, $data){
-    $sql = "INSERT INTO documents (doc_name, file_path, uploaded_for, upload_date,uploaded_by) VALUES (?,?,?,?,?)";
+    $sql = "INSERT INTO documents (`doc_name`, `file_path`, `uploaded_for`, `upload_date`,`uploaded_by`) VALUES (?,?,?,?,?)";
     $stmt = $conn->prepare($sql);
     $stmt-> execute($data);
 }
@@ -24,12 +24,12 @@ function get_all_documents($conn){
     $stmt-> execute([]);
     
     if($stmt->rowCount() > 0){
-        $tasks = $stmt->fetchAll();
+        $documents = $stmt->fetchAll();
 
     }
-    else $tasks = 0;
+    else $documents = 0;
 
-    return $tasks;
+    return $documents;
 }
 function get_document_by_id($conn, $id){
 	$sql = "SELECT * FROM documents WHERE `document_id`=? ";
