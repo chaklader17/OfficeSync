@@ -18,6 +18,9 @@ if (isset ($_SESSION['position']) &&  isset($_SESSION['employee_id'])) {
 <head>
 	<title>Documents</title>
 	<script src="https://kit.fontawesome.com/6eda733120.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="css/style.css">
 	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 	
@@ -86,7 +89,8 @@ if (isset ($_SESSION['position']) &&  isset($_SESSION['employee_id'])) {
 
 
 					<td><?=$document['upload_date']?></td>
-					<td><a href="<?php echo $document['file_path'];?>" button class = "assign-btn" download>Download</a></button>
+
+					<td><a href="<?=$document['file_path']?>" class = "assign-btn" download>Download</a>
 				
 
            
