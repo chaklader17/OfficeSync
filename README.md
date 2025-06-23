@@ -1,6 +1,6 @@
 <div align="center">
 
-# OfficeEaseAI: Smart Office Management System
+# OfficeSync: Smart Office Management System
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
@@ -83,3 +83,27 @@ Key objectives of the system:
 ## 🗂️ Project Structure
 
 </div>
+---
+
+<div align="center">
+
+## 🚀 Future Improvements
+
+</div>
+
+- Integrate real-time notifications (e.g., with WebSockets)
+- Add analytics for performance and productivity tracking
+- Introduce leave application and approval system
+- Connect with external calendar APIs (Google Calendar, Outlook)
+
+---
+
+<div align="center">
+
+## 📜 License
+
+</div>
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
